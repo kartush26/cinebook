@@ -1,0 +1,16 @@
+<div style="max-width:560px;margin:0 auto;background:#13131b;border-radius:12px;padding:24px">
+  <h1 style="color:#f43f5e;margin:0 0 12px">🎟️ Booking Confirmed</h1>
+  <p>Hi <%= @booking.user.name %>,</p>
+  <p>Your tickets for <strong><%= @booking.show.movie.title %></strong> are confirmed.</p>
+
+  <table style="width:100%;margin-top:16px;border-collapse:collapse">
+    <tr><td style="padding:6px 0;color:#a3a3a3">Reference</td><td style="text-align:right"><%= @booking.reference %></td></tr>
+    <tr><td style="padding:6px 0;color:#a3a3a3">Theater</td>  <td style="text-align:right"><%= @booking.show.screen.theater.name %></td></tr>
+    <tr><td style="padding:6px 0;color:#a3a3a3">Screen</td>   <td style="text-align:right"><%= @booking.show.screen.name %></td></tr>
+    <tr><td style="padding:6px 0;color:#a3a3a3">Showtime</td> <td style="text-align:right"><%= @booking.show.starts_at.in_time_zone('UTC').strftime('%d %b %Y, %H:%M UTC') %></td></tr>
+    <tr><td style="padding:6px 0;color:#a3a3a3">Seats</td>    <td style="text-align:right"><%= @booking.booking_seats.includes(:seat).map { |bs| "#{bs.seat.row_label}#{bs.seat.column_index}" }.join(', ') %></td></tr>
+    <tr><td style="padding:6px 0;color:#a3a3a3">Total paid</td><td style="text-align:right"><strong>$<%= format('%.2f', @booking.total_amount) %></strong></td></tr>
+  </table>
+
+  <p style="margin-top:24px;color:#a3a3a3;font-size:13px">Show this email (or QR ticket inside the app) at the gate. Enjoy the show!</p>
+</div>

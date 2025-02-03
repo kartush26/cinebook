@@ -1,0 +1,18 @@
+:concurrency: 10
+:queues:
+  - [critical, 3]
+  - [default, 2]
+  - [mailers, 2]
+  - [low, 1]
+
+:scheduler:
+  :schedule:
+    release_expired_locks:
+      cron: "* * * * *"
+      class: ReleaseExpiredLocksJob
+    payment_reconciliation:
+      cron: "*/15 * * * *"
+      class: PaymentReconciliationJob
+    weekly_featured_rotation:
+      cron: "0 0 * * 1"
+      class: WeeklyFeaturedMoviesRotationJob
