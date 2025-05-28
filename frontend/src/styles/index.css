@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background: #f8fafc;
+    color: #0f172a;
+  }
+}
+
+@layer components {
+  .btn          { @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition; }
+  .btn-primary  { @apply btn bg-brand hover:bg-brand-dark text-white shadow-glow; }
+  .btn-ghost    { @apply btn bg-slate-100 hover:bg-slate-200 text-slate-700; }
+  .input        { @apply w-full px-3 py-2 rounded-lg bg-white border border-slate-200
+                       focus:outline-none focus:ring-2 focus:ring-brand text-slate-900 placeholder-slate-400; }
+  .card         { @apply bg-white border border-slate-200 rounded-xl shadow-card; }
+}
+
+.seat {
+  width: 28px; height: 28px;
+  border-radius: 6px 6px 12px 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 10px; cursor: pointer;
+  transition: transform .12s ease;
+}
+.seat:hover:not(.booked):not(.locked) { transform: translateY(-2px); }
+.seat.available { background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+.seat.selected  { background: #0891b2; color: white; box-shadow: 0 0 12px rgba(8,145,178,0.45); }
+.seat.locked    { background: #fef3c7; color: #92400e; cursor: not-allowed; border: 1px solid #fde68a; }
+.seat.booked    { background: #f1f5f9; color: #cbd5e1; cursor: not-allowed; border: 1px dashed #e2e8f0; }
