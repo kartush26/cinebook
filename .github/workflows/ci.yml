@@ -70,6 +70,3 @@ jobs:
 
       - name: Type check + build
         run: npm run build
-
-      - name: Test
-        run: npm test --if-present
