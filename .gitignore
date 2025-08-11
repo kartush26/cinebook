@@ -13,3 +13,4 @@ backend/coverage/
 backend/.bundle/
 frontend/dist/
 frontend/coverage/
+*.tsbuildinfo

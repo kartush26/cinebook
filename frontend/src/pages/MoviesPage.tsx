@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { Movies } from '@/api/endpoints';
-import { Search, Star } from 'lucide-react';
+import { Search } from 'lucide-react';
 
 const LANGS  = ['All', 'English', 'Hindi', 'Japanese', 'Tamil'];
 const GENRES = ['All', 'Action', 'Drama', 'Sci-Fi', 'Romance', 'Thriller', 'Anime'];

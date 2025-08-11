@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { Admin } from '@/api/admin';
-import { DollarSign, Users, Film, Building2, Ticket, Activity } from 'lucide-react';
+import { DollarSign, Users, Ticket, Activity } from 'lucide-react';
 
 export function AdminDashboard() {
   const { data: o } = useQuery({ queryKey: ['admin-overview'], queryFn: Admin.overview });

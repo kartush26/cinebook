@@ -1,5 +1,5 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { Film, Ticket, LogOut, ShieldCheck, User } from 'lucide-react';
+import { Film, LogOut, ShieldCheck, User } from 'lucide-react';
 import { useAuthStore } from '@/store/auth';
 import { Auth } from '@/api/endpoints';
 
