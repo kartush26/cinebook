@@ -26,5 +26,5 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   config.force_ssl = false
-  config.hosts << ENV.fetch('APP_HOST', 'api.cinebook.example')
+  config.hosts.clear
 end
