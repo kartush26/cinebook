@@ -23,8 +23,8 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
 
-  config.force_ssl = true
+  config.force_ssl = false
   config.hosts << ENV.fetch('APP_HOST', 'api.cinebook.example')
 end
