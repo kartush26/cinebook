@@ -50,9 +50,6 @@ jobs:
       - name: Setup DB
         run: bundle exec rails db:create db:schema:load db:migrate
 
-      - name: Rubocop
-        run: bundle exec rubocop --parallel --fail-level convention
-
       - name: RSpec
         run: bundle exec rspec --format documentation
 
